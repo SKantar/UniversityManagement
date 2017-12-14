@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <report id="report_um_exam_results_action"
+                string="Results"
+                model="um.exam"
+                report_type="qweb-pdf"
+                name="university_management.report_um_exam_results_template"
+        />
+
+        <template id="report_um_exam_results_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <!-- Report page content -->
+                            <h2 t-field="o.subject_id.name" />
+                            <p t-field="o.exam_type" />
+                            <table class="table table-condensed" style="border: 1px solid #9999">
+                                <tr>
+                                    <td style="">
+                                        Last name
+                                    </td>
+                                    <td>
+                                        Middle name
+                                    </td>
+                                    <td>
+                                        First name
+                                    </td>
+                                    <td>
+                                        Program
+                                    </td>
+                                    <td>
+                                        Year
+                                    </td>
+                                    <td>
+                                        Points
+                                    </td>
+                                </tr>
+                                <t t-foreach="o.result_ids" t-as="f">
+                                    <tr>
+                                        <td colspan="1">
+                                            <span t-field="f.student_id.last" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="f.student_id.middle" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="f.student_id.student_name" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="f.student_id.program_id.name" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="f.student_id.year_of_studies.name" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="f.points" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</openerp>

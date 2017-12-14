@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="ir_actions_server_sign_exams" model="ir.actions.server">
+            <field name="sequence" eval="5"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_um_exam"/>
+            <field name="code">env["um.exam"].sign_exam(context.get('active_ids'))</field>
+            <field name="condition">True</field>
+            <field name="name">Apply</field>
+        </record>
+
+        <record id="ir_values_server_sign_exams" model="ir.values">
+            <field name="key2">client_action_multi</field>
+            <field name="model_id" ref="model_um_exam"/>
+            <field name="model">um.exam</field>
+            <field name="action_id" ref="university_management.ir_actions_server_sign_exams"/>
+            <field name="value_unpickle" eval="'ir.actions.server,%s' % ref('university_management.ir_actions_server_sign_exams')"/>
+            <field name="name">Apply</field>
+        </record>
+
+    </data>
+</openerp>

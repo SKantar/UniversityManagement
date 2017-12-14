@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_subject_result" model="ir.ui.view">
+            <field name="name">Subject Result Form</field>
+            <field name="model">um.subject.result</field>
+            <field name="arch" type="xml">
+                <form string="Subject Result Information">
+                    <sheet>
+                        <separator string="Exam Result"/>
+                        <group>
+                            <!--<field name="student_id" string="Student"/>-->
+                            <field name="subject_id" string="Subject"/>
+                            <field name="points" string="Points"/>
+                            <field name="mark" string="Mark"/>
+                            <field name="date" string="Date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_subject_result" model="ir.ui.view">
+            <field name="name">Subject Result Tree</field>
+            <field name="model">um.subject.result</field>
+            <field name="arch" type="xml">
+                <tree string="Exam Information">
+                    <field name="subject_id" string="Subject"/>
+                    <field name="points" string="Points"/>
+                    <field name="mark" string="Mark" invisible="context.get('invisible_mark', 0)"/>
+                    <field name="date" string="Date"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_subject_result"
+            name="Subject Result"
+            res_model="um.subject.result"
+            view_mode="tree,form" />
+    </data>
+</openerp>

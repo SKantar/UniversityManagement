@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_faculty" model="ir.ui.view">
+            <field name="name">Faculty Form</field>
+            <field name="model">um.faculty</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <separator string="Collage Configuration"/>
+                        <group>
+                            <group>
+                                <field name="name" string="Name" placeholder="Faculty Name"/>
+                                <field name="code" string="Code" placeholder="Code"/>
+                            </group>
+                            <group>
+                                <field name="logo" widget="image" string="Logo" options="{ 'size': [110, 110] }"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Address">
+                                <group>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="street" placeholder="Street..."  style="width: 50%%" />
+                                        <field name="street2" placeholder="Street2..." style="width: 45%%" />
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%" />
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 27%%"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 27%%" />
+                                        </div>
+                                        <div class="address_format">
+                                            <field name="country_id" placeholder="Country"  style="width: 40%%"  class="oe_no_button" />
+                                            <field name="currency_id"  style="width: 27%%"  placeholder="Select Or Create Currency"/>
+                                            <field name="lang"  style="width: 27%%" />
+                                        </div>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Contact">
+                                <group>
+                                    <group>
+                                        <field name="phone" string="Phone Number" placeholder="Phone Number"/>
+                                        <field name="fax" string="Fax" placeholder="Fax"/>
+                                        <field name="bank_ids" string="Bank acc" placeholder="Bank acc"/>
+                                        <field name="email" string="Email" placeholder="Email"/>
+                                        <field name="website" string="Website" placeholder="Website"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Programs">
+                                <field name="program_ids"/>
+                            </page>
+                            <page string="Teachers">
+                                <field name="teacher_ids"/>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_faculty" model="ir.ui.view">
+            <field name="name">Faculty Tree</field>
+            <field name="model">um.faculty</field>
+            <field name="arch" type="xml">
+                <tree string="Faculty Information">
+                    <field name="name" string="Faculty Name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_faculty"
+            name="Faculty"
+            res_model="um.faculty"
+            view_mode="tree,form" />
+    </data>
+</openerp>

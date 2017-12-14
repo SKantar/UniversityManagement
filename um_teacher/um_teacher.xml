@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_teacher" model="ir.ui.view">
+            <field name="name">Teacher Form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <page string="Public Information" position="after">
+                    <page string="Subjects">
+                        <field name="subject_ids" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <act_window id="action_um_teacher"
+                    name="Teacher"
+                    res_model="hr.employee"/>
+    </data>
+</openerp>

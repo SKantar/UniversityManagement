@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_subject_result_wizard" model="ir.ui.view">
+            <field name="name">Subject result wizard Form</field>
+            <field name="model">um.subject.result.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Subject">
+                    <group>
+                        <field name="student_id"/>
+                        <field name="subject_ids"/>
+                    </group>
+                    <footer>
+                        <button type="object" name="add_subject" string="Update" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" type="object" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_um_subject_result_wizard"
+                    name="Subject results"
+                    res_model="um.subject.result.wizard"
+                    src_model="um.subject.result.wizard"
+                    target="new"
+                    view_id="view_form_um_subject_result_wizard"
+                    view_type="form"
+                    view_mode="form"/>
+    </data>
+</openerp>

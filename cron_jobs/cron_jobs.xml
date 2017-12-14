@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="1">
+        <!-- Cron Job -->
+        <record id="ir_cron_smartchains_request_generator" model="ir.cron">
+            <field name="name">Payment request generator</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'um.make.requests'" name="model"/>
+            <field eval="'_make_request'" name="function"/>
+        </record>
+
+        <!-- Cron Job -->
+        <record id="ir_cron_smartchains_invoice_generator" model="ir.cron">
+            <field name="name">Invoice generator</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'um.invoice.generator'" name="model"/>
+            <field eval="'_create_invoice'" name="function"/>
+        </record>
+
+         <!-- Cron Job -->
+        <record id="ir_cron_smartchains_data_import" model="ir.cron">
+            <field name="name">Data Import</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'um.data.import'" name="model"/>
+            <field eval="'_import_data'" name="function"/>
+        </record>
+
+    </data>
+</openerp>

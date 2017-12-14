@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <menuitem
+            id="menu_faculty_management"
+            name="University Management"
+            sequence="1"/>
+
+        <menuitem
+            name="Faculties"
+            parent="menu_faculty_management"
+            id="menu_um_faculty"
+            sequence="10"/>
+
+        <menuitem
+            name="Faculties"
+            parent="menu_um_faculty"
+            id="sub_menu_um_faculty"
+            action="action_um_faculty"
+            sequence="1" />
+
+        <menuitem
+            name="Programs"
+            parent="menu_faculty_management"
+            id="menu_um_program"
+            sequence="20"/>
+
+        <menuitem
+            name="Programs"
+            parent="menu_um_program"
+            id="sub_menu_um_program"
+            action="action_um_program"
+            sequence="1" />
+
+        <menuitem
+            name="Subjects"
+            parent="menu_faculty_management"
+            id="menu_um_subject"
+            sequence="30"/>
+
+        <menuitem
+            name="Subjects"
+            parent="menu_um_subject"
+            id="sub_menu_um_subject"
+            action="action_um_subject"
+            sequence="1" />
+
+        <menuitem
+            name="Students"
+            parent="menu_faculty_management"
+            id="menu_um_student"
+            sequence="30"/>
+
+        <menuitem
+            name="Students"
+            parent="menu_um_student"
+            id="sub_menu_um_student"
+            action="action_um_student"
+            sequence="1" />
+
+        <menuitem
+            name="Exams"
+            parent="menu_faculty_management"
+            id="menu_um_exam"
+            sequence="40"/>
+
+        <menuitem
+            name="Exams"
+            parent="menu_um_exam"
+            id="sub_menu_um_exam"
+            action="action_um_exam"
+            sequence="1" />
+
+        <menuitem
+            name="Results"
+            parent="menu_um_exam"
+            id="sub_menu_um_exam_result"
+            action="action_um_exam_result"
+            sequence="2" />
+
+        <menuitem
+            name="Students"
+            parent="menu_um_exam"
+            id="sub_menu_um_signed_exam"
+            action="action_um_signed_exam"
+            sequence="3" />
+
+        <menuitem
+            name="Teachers"
+            parent="menu_faculty_management"
+            id="menu_um_teacher"
+            sequence="50"/>
+
+        <menuitem
+            name="Teachers"
+            parent="menu_um_teacher"
+            id="sub_menu_um_teacher"
+            action="action_um_teacher"
+            sequence="1" />
+
+        <menuitem
+            name="Data import"
+            parent="menu_faculty_management"
+            id="menu_um_data_import_wizard"
+            sequence="100"/>
+
+        <menuitem
+            name="Data import"
+            parent="menu_um_data_import_wizard"
+            id="sub_menu_um_data_import_wizard"
+            action="action_um_data_import_wizard"
+            sequence="1" />
+
+        <menuitem
+            name="Request"
+            parent="menu_um_data_import_wizard"
+            id="sub_menu_um_data_import_request"
+            action="action_um_data_import_request"
+            sequence="1" />
+
+        <menuitem
+            name="Payment"
+            parent="menu_faculty_management"
+            id="menu_um_payment_unit"
+            sequence="90"/>
+
+        <menuitem
+            name="Units"
+            parent="menu_um_payment_unit"
+            id="sub_menu_um_payment_unit"
+            action="action_um_payment_unit"
+            sequence="1" />
+
+        <menuitem
+            name="Requests"
+            parent="menu_um_payment_unit"
+            id="sub_menu_um_payment_request"
+            action="action_um_payment_request"
+            sequence="1" />
+
+
+    </data>
+</openerp>

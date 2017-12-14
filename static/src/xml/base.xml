@@ -1,0 +1,17 @@
+<template>
+
+    <t t-extend="ListView.buttons">
+        <t t-jquery="div.oe_list_buttons" t-operation="append">
+                <button t-if="widget.model == 'um.exam'" id="um_exam_apply_button" class="oe_button oe_highlight" style="display:none" type="button">Apply</button>
+        </t>
+    </t>
+
+
+    <t t-extend="FormView.buttons">
+         <t t-jquery="span.oe_form_buttons_view" t-operation="append">
+            <button t-if="widget.model == 'um.exam'" id="um_exam_apply_button" class="oe_button" type="button">Apply</button>
+        </t>
+    </t>
+
+</template>
+

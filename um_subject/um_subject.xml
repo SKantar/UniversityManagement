@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_subject" model="ir.ui.view">
+            <field name="name">Subject Form</field>
+            <field name="model">um.subject</field>
+            <field name="arch" type="xml">
+                <form string="Subject Information" version="7.0">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Subject Name" placeholder="Subject Name"/>
+                            <field name="code"  string="Code" placeholder="Code"/>
+                            <field name="description" string="Description" placeholder="Description"/>
+                            <field name="is_mandatory" string="Mandatory"/>
+                            <field name="espb" string="ESPB"/>
+                            <field name="hours" string="Hours"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Teachers">
+                                <field name='teacher_ids' string="Teachers" widget='many2many'/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_subject" model="ir.ui.view">
+            <field name="name">Subject Tree</field>
+            <field name="model">um.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Subject Information">
+                    <field name="name" string="Subject Name"/>
+                    <field name="code"  string="Code"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_subject"
+            name="Subject"
+            res_model="um.subject"
+            view_mode="tree,form" />
+
+    </data>
+</openerp>

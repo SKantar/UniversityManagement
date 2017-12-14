@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_exam_result" model="ir.ui.view">
+            <field name="name">Exam Result Form</field>
+            <field name="model">um.exam.result</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+						<span>
+							<field name="state" widget="statusbar" statusbar_visible="n,e"
+								statusbar_colors='{"c":"red"}' />
+						</span>
+					</header>
+
+                    <sheet>
+                        <separator string="Exam Result"/>
+                        <group>
+                            <field name="student_id" string="Student" attrs="{'readonly':[('state','=','e') ] }"/>
+                            <field name="exam_id" string="Exam" attrs="{'readonly':[('state','=','e') ] }" />
+                            <field name="points" string="Points"/>
+                            <field name="date" string="Date"/>
+                            <field name="is_banned" string="Banned"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_exam_result" model="ir.ui.view">
+            <field name="name">Exam Result Tree</field>
+            <field name="model">um.exam.result</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="student_id" string="Student"/>
+                    <field name="exam_id" string="Exam" invisible="context.get('invisible_exam', 0)"/>
+                    <field name="date" string="Date"/>
+                    <field name="points" string="Points"/>
+                    <field name="is_banned" string="Banned"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_exam_result"
+                    name="Exam Result"
+                    res_model="um.exam.result"/>
+
+    </data>
+</openerp>

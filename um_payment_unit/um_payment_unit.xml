@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_payment_unit" model="ir.ui.view">
+            <field name="name">um.payment.unit.form</field>
+            <field name="model">um.payment.unit</field>
+            <field name="arch" type="xml">
+                <form string="Informations" version="7.0">
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="product_id"/>
+                        <field name="price_unit"/>
+                        <field name="quantity"/>
+                        <field name="discount"/>
+                        <field name="amount"/>
+                        <field name="date"/>
+                        <field name="send_invoice_by"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_payment_unit" model="ir.ui.view">
+            <field name="name">um.payment.unit.tree</field>
+            <field name="model">um.payment.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Informations">
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="price_unit"/>
+                    <field name="quantity"/>
+                    <field name="discount"/>
+                    <field name="amount"/>
+                    <field name="date"/>
+                    <field name="send_invoice_by"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_payment_unit"
+                    name="Payment unit"
+                    res_model="um.payment.unit"
+                    src_model="um.payment.unit"/>
+    </data>
+</openerp>

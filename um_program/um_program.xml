@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_program" model="ir.ui.view">
+            <field name="name">Program Form</field>
+            <field name="model">um.program</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <header>
+                    </header>
+                    <sheet>
+
+                        <div class="oe_right">
+                            <button string="Show students" type="object" name="show_students"/>
+                        </div>
+                        <group>
+                            <field name='name' placeholder="Name" />
+                            <field name='code' placeholder="Code" />
+                            <field name="sequence_id"/>
+                            <field name="faculty_id"/>
+                            <field name='type_of_studies'/>
+                            <field name='duration'/>
+                            <field name='profession'/>
+                            <field name='description' placeholder="Description" />
+                        </group>
+                        <notebook>
+                            <page string="Plan">
+                                <field name="academic_year_ids" context="{'invisible_exam': 1}" string="Years"/>
+                            </page>
+                            <page string="Students">
+                                <field name="student_ids"/>
+                            </page>
+                            <page string="Scholarship types">
+                                <field name="scholarship_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_program" model="ir.ui.view">
+            <field name="name">Program Tree</field>
+            <field name="model">um.program</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name='name' string="Name"/>
+                    <field name='code' string="Code"/>
+                    <field name='type_of_studies' string="Type of studies"/>
+                    <field name='profession' string="Profession"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_program"
+            name="Program"
+            res_model="um.program"
+            view_mode="tree,form" />
+
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+
+
+<template id="assets_backend" name="m2x options assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="/university_management/static/src/js/university_management.js"/>
+    </xpath>
+</template>
+
+
+
+    </data>
+</openerp>

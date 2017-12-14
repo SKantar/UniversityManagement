@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+        <record id="view_form_um_academic_year" model="ir.ui.view">
+            <field name="name">Academic year Form</field>
+            <field name="model">um.academic.year</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="num_of_electoral"/>
+                        </group>
+                        <separator string="Programs"/>
+                        <field name="program_ids" />
+                        <separator string="Subjects"/>
+                        <field name="subject_ids"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_um_academic_year" model="ir.ui.view">
+            <field name="name">Academic year Tree</field>
+            <field name="model">um.academic.year</field>
+            <field name="arch" type="xml">
+                <tree string="Academic year">
+                    <field name="program_ids" invisible="context.get('invisible_exam', 0)"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="action_um_academic_year"
+            name="Academic year"
+            res_model="um.academic.year"
+            view_mode="tree,form" />
+    </data>
+</openerp>
